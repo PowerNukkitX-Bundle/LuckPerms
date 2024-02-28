@@ -1,0 +1,14 @@
+name: LuckPerms
+version: ${pluginVersion}
+api: "2.0.0"
+description: A permissions plugin
+author: Luck
+website: https://luckperms.net
+
+main: me.lucko.luckperms.nukkit.loader.NukkitLoaderPlugin
+load: STARTUP
+
+commands:
+  luckperms:
+    description: Manage permissions
+    aliases: [lp, perm, perms, permission, permissions]
