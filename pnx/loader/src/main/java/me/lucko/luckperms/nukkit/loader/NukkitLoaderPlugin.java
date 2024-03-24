@@ -30,7 +30,7 @@ import me.lucko.luckperms.common.loader.JarInJarClassLoader;
 import me.lucko.luckperms.common.loader.LoaderBootstrap;
 
 public class NukkitLoaderPlugin extends PluginBase {
-    private static final String JAR_NAME = "luckperms-nukkit.jarinjar";
+    private static final String JAR_NAME = "luckperms-pnx.jarinjar";
     private static final String BOOTSTRAP_CLASS = "me.lucko.luckperms.nukkit.LPNukkitBootstrap";
 
     private final LoaderBootstrap plugin;
