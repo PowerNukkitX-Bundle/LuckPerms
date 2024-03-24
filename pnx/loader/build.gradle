@@ -8,7 +8,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.PowerNukkitX:PowerNukkitX:master-SNAPSHOT'
+    compileOnly 'com.github.PowerNukkitX:PowerNukkitX:master-SNAPSHOT'
 
     implementation project(':api')
     implementation project(':common:loader-utils')
