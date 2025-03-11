@@ -1,5 +1,5 @@
 FROM alpine
-RUN apk add --no-cache openjdk17 netcat-openbsd
+RUN apk add --no-cache openjdk21 netcat-openbsd
 
 # create a simple 'send' command that will allow users
 # to run, for example: docker exec <container> send lp info

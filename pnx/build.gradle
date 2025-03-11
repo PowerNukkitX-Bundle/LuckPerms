@@ -11,8 +11,10 @@ dependencies {
     implementation project(':common')
     compileOnly project(':common:loader-utils')
 
-    implementation 'com.github.PowerNukkitX:PowerNukkitX:master-SNAPSHOT'
+    implementation 'com.github.PowerNukkitX:PowerNukkitX:-SNAPSHOT'
 }
+
+
 
 shadowJar {
     archiveFileName = 'luckperms-pnx.jarinjar'
