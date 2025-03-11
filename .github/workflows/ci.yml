@@ -57,3 +57,21 @@ jobs:
         with:
           name: standalone-binary
           path: standalone/loader/build/libs/LuckPerms-Standalone-*.jar
+
+      - name: Release latest build
+        uses: Xotl/cool-github-releases@v1
+        if: success() && github.repository == 'PowerNukkitX-Bundle/LuckPerms' && contains(github.ref_name, 'master')
+        with:
+          mode: update
+          isPrerelease: false
+          tag_name: snapshot
+          release_name: "Latest Snapshot"
+          body_mrkdwn: |
+            This is the **latest version of LuckPerms-PNX**, built from the latest source. 
+            (_Please note that the date on GitHub might appear outdated due to certain limitations._)
+            **Corresponding commit:** <https://github.com/powernukkitx-bundle/luckperms/commit/${{ github.sha }}>_
+            
+            > [!NOTE]
+            > If you encounter any issues, please report them directly on our [Discord](https://discord.gg/apwd7uauZg) or in the [GitHub Issues](https://github.com/powernukkitx/powernukkitx/issues) tab.
+            The file is a zip file. The plugin jar is inside that zip file.
+          github_token: ${{ secrets.GITHUB_TOKEN }}
