@@ -74,6 +74,6 @@ jobs:
             > [!NOTE]
             > If you encounter any issues, please report them directly on our [Discord](https://discord.gg/apwd7uauZg) or in the [GitHub Issues](https://github.com/powernukkitx/powernukkitx/issues) tab.
             The file is a zip file. The plugin jar is inside that zip file.
-          assets: build/LuckPerms-PNX;
+          assets: build/LuckPerms-PNX.zip;
           replace_assets: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
