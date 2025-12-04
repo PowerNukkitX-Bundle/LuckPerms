@@ -37,6 +37,7 @@ import me.lucko.luckperms.common.command.CommandManager;
 import me.lucko.luckperms.common.command.utils.ArgumentTokenizer;
 import me.lucko.luckperms.common.sender.Sender;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class NukkitCommandExecutor extends CommandManager implements CommandExecutor, Listener {
@@ -57,7 +58,7 @@ public class NukkitCommandExecutor extends CommandManager implements CommandExec
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Sender wrapped = this.plugin.getSenderFactory().wrap(sender);
-        List<String> arguments = ArgumentTokenizer.EXECUTE.tokenizeInput(args);
+        List<String> arguments = new ArrayList<>(List.of(args));
         executeCommand(wrapped, label, arguments);
         return true;
     }
