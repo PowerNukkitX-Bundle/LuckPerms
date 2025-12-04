@@ -8,6 +8,9 @@ website: https://luckperms.net
 main: me.lucko.luckperms.nukkit.loader.NukkitLoaderPlugin
 load: STARTUP
 
+softdepend:
+  - PlaceholderAPI
+
 commands:
   luckperms:
     description: Manage permissions

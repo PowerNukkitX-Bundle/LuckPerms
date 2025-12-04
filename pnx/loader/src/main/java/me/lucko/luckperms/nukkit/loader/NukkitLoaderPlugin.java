@@ -28,6 +28,13 @@ package me.lucko.luckperms.nukkit.loader;
 import cn.nukkit.plugin.PluginBase;
 import me.lucko.luckperms.common.loader.JarInJarClassLoader;
 import me.lucko.luckperms.common.loader.LoaderBootstrap;
+import net.luckperms.api.LuckPerms;
+import net.luckperms.api.LuckPermsProvider;
+import net.luckperms.api.model.group.Group;
+import net.luckperms.api.model.group.GroupManager;
+import net.luckperms.api.model.user.UserManager;
+import net.luckperms.api.query.QueryOptions;
+import org.powernukkitx.placeholderapi.PlaceholderAPI;
 
 public class NukkitLoaderPlugin extends PluginBase {
     private static final String JAR_NAME = "luckperms-pnx.jarinjar";
@@ -48,11 +55,30 @@ public class NukkitLoaderPlugin extends PluginBase {
     @Override
     public void onEnable() {
         this.plugin.onEnable();
+        loadPlaceholders();
     }
 
     @Override
     public void onDisable() {
         this.plugin.onDisable();
+    }
+
+    private void loadPlaceholders() {
+        if(getServer().getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            PlaceholderAPI placeholderAPI = PlaceholderAPI.get();
+            LuckPerms api = LuckPermsProvider.get();
+            UserManager userManager = api.getUserManager();
+            GroupManager groupManager = api.getGroupManager();
+            placeholderAPI.register("luckperms_prefix", (player, strings) -> userManager.getUser(player.getUniqueId()).getCachedData().getMetaData().getPrefix());
+            placeholderAPI.register("luckperms_suffix", (player, strings) -> userManager.getUser(player.getUniqueId()).getCachedData().getMetaData().getSuffix());
+            placeholderAPI.register("luckperms_primary_group", (player, strings) -> userManager.getUser(player.getUniqueId()).getPrimaryGroup());
+            placeholderAPI.register("luckperms_groups", (player, strings) -> userManager.getUser(player.getUniqueId()).getInheritedGroups(QueryOptions.defaultContextualOptions()).stream().map(Group::getName).toList().toString());
+            placeholderAPI.register("luckperms_meta", (player, strings) -> {
+                if(strings.length != 1) return "unknown";
+                return userManager.getUser(player.getUniqueId()).getCachedData().getMetaData().getMetaValue(strings[0]);
+            });
+
+        }
     }
 
 }

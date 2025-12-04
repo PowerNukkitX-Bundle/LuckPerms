@@ -4,12 +4,13 @@ plugins {
 
 repositories {
     maven { url 'https://repo.opencollab.dev/main/' }
+    maven { url 'https://repo.powernukkitx.org/releases' }
     maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    compileOnly 'com.github.PowerNukkitX:PowerNukkitX:master-SNAPSHOT'
-
+    compileOnly 'org.powernukkitx:server:2.0.0-SNAPSHOT'
+    compileOnly 'com.github.PowerNukkitX-Bundle:PlaceholderAPI:main-SNAPSHOT'
     implementation project(':api')
     implementation project(':common:loader-utils')
 }
