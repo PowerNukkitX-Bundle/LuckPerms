@@ -9,7 +9,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'org.powernukkitx:server:2.0.0-SNAPSHOT'
+    compileOnly 'org.powernukkitx:server:b-migration-SNAPSHOT'
     compileOnly 'com.github.PowerNukkitX-Bundle:PlaceholderAPI:main-SNAPSHOT'
     implementation project(':api')
     implementation project(':common:loader-utils')

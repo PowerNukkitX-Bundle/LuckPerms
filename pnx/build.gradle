@@ -12,7 +12,7 @@ dependencies {
     implementation project(':common')
     compileOnly project(':common:loader-utils')
 
-    implementation 'org.powernukkitx:server:2.0.0-SNAPSHOT'
+    compileOnly 'org.powernukkitx:server:b-migration-SNAPSHOT'
 }
 
 
