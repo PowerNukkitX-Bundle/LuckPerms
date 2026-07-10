@@ -12,6 +12,66 @@ dependencies {
     compileOnly 'org.jetbrains:annotations:23.1.0'
 }
 
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
+publishing {
+    repositories {
+        maven {
+            name = 'powernukkitx-releases'
+            url = 'https://repo.powernukkitx.org/releases'
+
+            credentials {
+                username = System.getenv('PNX_REPO_USERNAME')
+                password = System.getenv('PNX_REPO_PASSWORD')
+            }
+        }
+    }
+
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'api'
+
+            from components.java
+
+            pom {
+                name = 'LuckPerms API'
+                description = 'A permissions plugin for Minecraft servers.'
+                url = 'https://luckperms.net'
+
+                licenses {
+                    license {
+                        name = 'MIT'
+                        url = 'https://opensource.org/licenses/MIT'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = 'lucko'
+                        name = 'Luck'
+                        url = 'https://lucko.me'
+                        email = 'git@lucko.me'
+                    }
+                }
+
+                scm {
+                    connection = 'scm:git:https://github.com/LuckPerms/LuckPerms.git'
+                    developerConnection = 'scm:git:git@github.com:LuckPerms/LuckPerms.git'
+                    url = 'https://github.com/LuckPerms/LuckPerms'
+                }
+
+                issueManagement {
+                    system = 'GitHub'
+                    url = 'https://github.com/LuckPerms/LuckPerms/issues'
+                }
+            }
+        }
+    }
+}
+
 // Only used occasionally for deployment - not needed for normal builds.
 /*
 if (project.hasProperty('sonatypeUsername') && project.hasProperty('sonatypePassword')) {
