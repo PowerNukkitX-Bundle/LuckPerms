@@ -25,10 +25,10 @@
 
 package me.lucko.luckperms.nukkit.inject.permissible;
 
-import cn.nukkit.permission.Permission;
-import cn.nukkit.permission.PermissionAttachment;
-import cn.nukkit.permission.PermissionRemovedExecutor;
-import cn.nukkit.plugin.Plugin;
+import org.powernukkitx.permission.Permission;
+import org.powernukkitx.permission.PermissionAttachment;
+import org.powernukkitx.permission.PermissionRemovedExecutor;
+import org.powernukkitx.plugin.Plugin;
 import com.google.common.base.Preconditions;
 import me.lucko.luckperms.common.config.ConfigKeys;
 import me.lucko.luckperms.common.model.User;

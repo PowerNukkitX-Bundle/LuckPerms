@@ -25,9 +25,9 @@
 
 package me.lucko.luckperms.nukkit.inject.server;
 
-import cn.nukkit.Server;
-import cn.nukkit.permission.Permission;
-import cn.nukkit.plugin.PluginManager;
+import org.powernukkitx.Server;
+import org.powernukkitx.permission.Permission;
+import org.powernukkitx.plugin.PluginManager;
 import com.google.common.collect.ImmutableMap;
 import me.lucko.luckperms.nukkit.LPNukkitPlugin;
 

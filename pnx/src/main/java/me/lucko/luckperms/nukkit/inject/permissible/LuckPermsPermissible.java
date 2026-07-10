@@ -25,12 +25,12 @@
 
 package me.lucko.luckperms.nukkit.inject.permissible;
 
-import cn.nukkit.Player;
-import cn.nukkit.permission.PermissibleBase;
-import cn.nukkit.permission.Permission;
-import cn.nukkit.permission.PermissionAttachment;
-import cn.nukkit.permission.PermissionAttachmentInfo;
-import cn.nukkit.plugin.Plugin;
+import org.powernukkitx.Player;
+import org.powernukkitx.permission.PermissibleBase;
+import org.powernukkitx.permission.Permission;
+import org.powernukkitx.permission.PermissionAttachment;
+import org.powernukkitx.permission.PermissionAttachmentInfo;
+import org.powernukkitx.plugin.Plugin;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import me.lucko.luckperms.common.cacheddata.result.TristateResult;

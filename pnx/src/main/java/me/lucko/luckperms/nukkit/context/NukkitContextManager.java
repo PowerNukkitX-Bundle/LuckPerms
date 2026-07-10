@@ -25,7 +25,7 @@
 
 package me.lucko.luckperms.nukkit.context;
 
-import cn.nukkit.Player;
+import org.powernukkitx.Player;
 import com.github.benmanes.caffeine.cache.LoadingCache;
 import me.lucko.luckperms.common.cache.LoadingMap;
 import me.lucko.luckperms.common.config.ConfigKeys;

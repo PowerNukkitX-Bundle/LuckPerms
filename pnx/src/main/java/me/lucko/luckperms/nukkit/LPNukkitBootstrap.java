@@ -25,9 +25,9 @@
 
 package me.lucko.luckperms.nukkit;
 
-import cn.nukkit.Player;
-import cn.nukkit.Server;
-import cn.nukkit.plugin.PluginBase;
+import org.powernukkitx.Player;
+import org.powernukkitx.Server;
+import org.powernukkitx.plugin.PluginBase;
 import me.lucko.luckperms.common.loader.LoaderBootstrap;
 import me.lucko.luckperms.common.plugin.bootstrap.BootstrappedWithLoader;
 import me.lucko.luckperms.common.plugin.bootstrap.LuckPermsBootstrap;

@@ -25,7 +25,7 @@
 
 package me.lucko.luckperms.nukkit.listeners;
 
-import cn.nukkit.Player;
+import org.powernukkitx.Player;
 import me.lucko.luckperms.common.api.implementation.ApiUser;
 import me.lucko.luckperms.common.event.LuckPermsEventListener;
 import me.lucko.luckperms.common.model.User;

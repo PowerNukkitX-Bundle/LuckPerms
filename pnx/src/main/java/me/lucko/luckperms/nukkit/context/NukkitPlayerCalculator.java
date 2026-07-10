@@ -25,14 +25,14 @@
 
 package me.lucko.luckperms.nukkit.context;
 
-import cn.nukkit.Player;
-import cn.nukkit.Server;
-import cn.nukkit.event.EventHandler;
-import cn.nukkit.event.EventPriority;
-import cn.nukkit.event.Listener;
-import cn.nukkit.event.entity.EntityLevelChangeEvent;
-import cn.nukkit.event.player.PlayerGameModeChangeEvent;
-import cn.nukkit.level.Level;
+import org.powernukkitx.Player;
+import org.powernukkitx.Server;
+import org.powernukkitx.event.EventHandler;
+import org.powernukkitx.event.EventPriority;
+import org.powernukkitx.event.Listener;
+import org.powernukkitx.event.entity.EntityLevelChangeEvent;
+import org.powernukkitx.event.player.PlayerGameModeChangeEvent;
+import org.powernukkitx.level.Level;
 import me.lucko.luckperms.common.config.ConfigKeys;
 import me.lucko.luckperms.common.context.ImmutableContextSetImpl;
 import me.lucko.luckperms.nukkit.LPNukkitPlugin;

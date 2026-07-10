@@ -25,9 +25,9 @@
 
 package me.lucko.luckperms.nukkit;
 
-import cn.nukkit.Player;
-import cn.nukkit.command.CommandSender;
-import cn.nukkit.command.ConsoleCommandSender;
+import org.powernukkitx.Player;
+import org.powernukkitx.command.CommandSender;
+import org.powernukkitx.command.ConsoleCommandSender;
 import me.lucko.luckperms.common.locale.TranslationManager;
 import me.lucko.luckperms.common.sender.Sender;
 import me.lucko.luckperms.common.sender.SenderFactory;

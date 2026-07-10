@@ -25,13 +25,13 @@
 
 package me.lucko.luckperms.nukkit;
 
-import cn.nukkit.utils.Logger;
+import org.powernukkitx.utils.Logger;
 import me.lucko.luckperms.common.plugin.logging.PluginLogger;
 
 public class NukkitPluginLogger implements PluginLogger {
     private final Logger logger;
 
-    public NukkitPluginLogger(cn.nukkit.plugin.PluginLogger logger) {
+    public NukkitPluginLogger(org.powernukkitx.plugin.PluginLogger logger) {
         this.logger = logger;
     }
 

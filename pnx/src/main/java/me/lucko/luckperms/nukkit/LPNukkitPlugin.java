@@ -25,13 +25,13 @@
 
 package me.lucko.luckperms.nukkit;
 
-import cn.nukkit.Player;
-import cn.nukkit.command.PluginCommand;
-import cn.nukkit.permission.Permission;
-import cn.nukkit.plugin.PluginBase;
-import cn.nukkit.plugin.PluginManager;
-import cn.nukkit.plugin.service.ServicePriority;
-import cn.nukkit.utils.Config;
+import org.powernukkitx.Player;
+import org.powernukkitx.command.PluginCommand;
+import org.powernukkitx.permission.Permission;
+import org.powernukkitx.plugin.PluginBase;
+import org.powernukkitx.plugin.PluginManager;
+import org.powernukkitx.plugin.service.ServicePriority;
+import org.powernukkitx.utils.Config;
 import me.lucko.luckperms.common.api.LuckPermsApiProvider;
 import me.lucko.luckperms.common.calculator.CalculatorFactory;
 import me.lucko.luckperms.common.command.access.CommandPermission;

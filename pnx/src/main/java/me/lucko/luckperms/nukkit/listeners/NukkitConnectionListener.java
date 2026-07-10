@@ -25,13 +25,13 @@
 
 package me.lucko.luckperms.nukkit.listeners;
 
-import cn.nukkit.Player;
-import cn.nukkit.event.EventHandler;
-import cn.nukkit.event.EventPriority;
-import cn.nukkit.event.Listener;
-import cn.nukkit.event.player.PlayerJoinEvent;
-import cn.nukkit.event.player.PlayerLoginEvent;
-import cn.nukkit.event.player.PlayerQuitEvent;
+import org.powernukkitx.Player;
+import org.powernukkitx.event.EventHandler;
+import org.powernukkitx.event.EventPriority;
+import org.powernukkitx.event.Listener;
+import org.powernukkitx.event.player.PlayerJoinEvent;
+import org.powernukkitx.event.player.PlayerLoginEvent;
+import org.powernukkitx.event.player.PlayerQuitEvent;
 import me.lucko.luckperms.common.config.ConfigKeys;
 import me.lucko.luckperms.common.locale.Message;
 import me.lucko.luckperms.common.locale.TranslationManager;

@@ -25,13 +25,13 @@
 
 package me.lucko.luckperms.nukkit.listeners;
 
-import cn.nukkit.command.CommandSender;
-import cn.nukkit.event.Cancellable;
-import cn.nukkit.event.EventHandler;
-import cn.nukkit.event.Listener;
-import cn.nukkit.event.player.PlayerCommandPreprocessEvent;
-import cn.nukkit.event.server.RemoteServerCommandEvent;
-import cn.nukkit.event.server.ServerCommandEvent;
+import org.powernukkitx.command.CommandSender;
+import org.powernukkitx.event.Cancellable;
+import org.powernukkitx.event.EventHandler;
+import org.powernukkitx.event.Listener;
+import org.powernukkitx.event.player.PlayerCommandPreprocessEvent;
+import org.powernukkitx.event.server.RemoteServerCommandEvent;
+import org.powernukkitx.event.server.ServerCommandEvent;
 import me.lucko.luckperms.common.config.ConfigKeys;
 import me.lucko.luckperms.common.locale.Message;
 import me.lucko.luckperms.nukkit.LPNukkitPlugin;

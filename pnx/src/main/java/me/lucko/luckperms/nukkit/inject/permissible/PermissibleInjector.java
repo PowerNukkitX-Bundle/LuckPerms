@@ -25,9 +25,9 @@
 
 package me.lucko.luckperms.nukkit.inject.permissible;
 
-import cn.nukkit.Player;
-import cn.nukkit.permission.PermissibleBase;
-import cn.nukkit.permission.PermissionAttachment;
+import org.powernukkitx.Player;
+import org.powernukkitx.permission.PermissibleBase;
+import org.powernukkitx.permission.PermissionAttachment;
 
 import java.lang.reflect.Field;
 import java.util.Set;

@@ -25,10 +25,10 @@
 
 package me.lucko.luckperms.nukkit;
 
-import cn.nukkit.event.EventHandler;
-import cn.nukkit.event.Listener;
-import cn.nukkit.event.plugin.PluginDisableEvent;
-import cn.nukkit.plugin.Plugin;
+import org.powernukkitx.event.EventHandler;
+import org.powernukkitx.event.Listener;
+import org.powernukkitx.event.plugin.PluginDisableEvent;
+import org.powernukkitx.plugin.Plugin;
 import me.lucko.luckperms.common.api.LuckPermsApiProvider;
 import me.lucko.luckperms.common.event.AbstractEventBus;
 

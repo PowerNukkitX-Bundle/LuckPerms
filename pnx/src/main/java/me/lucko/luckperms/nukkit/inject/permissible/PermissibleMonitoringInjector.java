@@ -25,8 +25,8 @@
 
 package me.lucko.luckperms.nukkit.inject.permissible;
 
-import cn.nukkit.command.ConsoleCommandSender;
-import cn.nukkit.permission.PermissibleBase;
+import org.powernukkitx.command.ConsoleCommandSender;
+import org.powernukkitx.permission.PermissibleBase;
 import me.lucko.luckperms.nukkit.LPNukkitPlugin;
 
 import java.lang.reflect.Field;

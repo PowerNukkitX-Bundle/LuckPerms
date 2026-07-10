@@ -25,14 +25,14 @@
 
 package me.lucko.luckperms.nukkit;
 
-import cn.nukkit.command.Command;
-import cn.nukkit.command.CommandExecutor;
-import cn.nukkit.command.CommandSender;
-import cn.nukkit.command.ConsoleCommandSender;
-import cn.nukkit.command.PluginCommand;
-import cn.nukkit.event.EventHandler;
-import cn.nukkit.event.Listener;
-import cn.nukkit.event.server.ServerCommandEvent;
+import org.powernukkitx.command.Command;
+import org.powernukkitx.command.CommandExecutor;
+import org.powernukkitx.command.CommandSender;
+import org.powernukkitx.command.ConsoleCommandSender;
+import org.powernukkitx.command.PluginCommand;
+import org.powernukkitx.event.EventHandler;
+import org.powernukkitx.event.Listener;
+import org.powernukkitx.event.server.ServerCommandEvent;
 import me.lucko.luckperms.common.command.CommandManager;
 import me.lucko.luckperms.common.command.utils.ArgumentTokenizer;
 import me.lucko.luckperms.common.sender.Sender;
