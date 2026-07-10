@@ -1,18 +1,20 @@
 name: Build Gradle
 
 on:
+  workflow_dispatch:
   push:
     branches:
+      - 'main'
       - 'master'
     tags:
       - 'v*'
   pull_request:
     branches:
+      - 'main'
       - 'master'
 
-env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+permissions:
+  contents: write
 
 jobs:
   build-gradle:
@@ -31,12 +33,32 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
+          server-id: powernukkitx-releases
+          server-username: PNX_REPO_USERNAME
+          server-password: PNX_REPO_PASSWORD
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
 
       - name: Run build and tests with Gradle wrapper
         run: ./gradlew test build
+
+      - name: Resolve PNX loader artifact
+        id: pnx_loader
+        shell: bash
+        run: |
+          ARTIFACT="$(ls pnx/loader/build/libs/LuckPerms-PNX-*.jar | head -n 1)"
+          if [ ! -f "$ARTIFACT" ]; then
+            echo "PNX loader artifact was not created"
+            exit 1
+          fi
+
+          VERSION="$(basename "$ARTIFACT" .jar)"
+          VERSION="${VERSION#LuckPerms-PNX-}"
+
+          echo "artifact=$ARTIFACT" >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=v$VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Publish test report
         uses: mikepenz/action-junit-report@v5
@@ -50,10 +72,28 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: LuckPerms-PNX
-          path: pnx/loader/build/libs/LuckPerms-PNX-*.jar
+          path: ${{ steps.pnx_loader.outputs.artifact }}
 
-      - name: Upload standalone artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: standalone-binary
-          path: standalone/loader/build/libs/LuckPerms-Standalone-*.jar
+      - name: Create GitHub release
+        if: github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ github.ref_type }}" = "tag" ]; then
+            RELEASE_TAG="${{ github.ref_name }}"
+          else
+            RELEASE_TAG="${{ steps.pnx_loader.outputs.tag }}"
+          fi
+
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            gh release upload "$RELEASE_TAG" "${{ steps.pnx_loader.outputs.artifact }}" --clobber
+          else
+            gh release create "$RELEASE_TAG" "${{ steps.pnx_loader.outputs.artifact }}" --target "${{ github.sha }}" --title "$RELEASE_TAG" --notes "Automated release for $RELEASE_TAG"
+          fi
+
+      - name: Deploy API to PowerNukkitX repository
+        if: github.event_name == 'push'
+        run: ./gradlew :api:publish -x test
+        env:
+          PNX_REPO_USERNAME: ${{ secrets.PNX_REPO_USERNAME }}
+          PNX_REPO_PASSWORD: ${{ secrets.PNX_REPO_PASSWORD }}
